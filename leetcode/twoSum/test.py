@@ -2,6 +2,7 @@ import unittest
 import os
 from importlib import import_module
 import time
+from v1 import test_function
 
 def unit_test(self, twoSum):
     self.assertEqual(set(twoSum([2, 7, 11, 15], 9)), set([0, 1]))
@@ -11,17 +12,7 @@ def unit_test(self, twoSum):
 
 class TwoSum(unittest.TestCase):
     def test(self):
-        res = {}
-        for filename in os.listdir("."):
-            if filename.endswith(".py") and filename != "test.py": 
-                module = import_module(filename.replace(".py", ""))
-                test_function = module.test_function
-                trials = 10
-                start = time.time()
-                for i in range(trials):
-                    unit_test(self, test_function)
-                res[filename] = (time.time() - start) / trials
-        print({k: v for k, v in sorted(res.items(), key=lambda item: item[1])})
+        unit_test(self, test_function)
 
 if __name__ == "__main__":
     unittest.main()
