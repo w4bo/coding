@@ -1,0 +1,29 @@
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+apply plugin: 'python-sdist'
+ 
+ 
+dependencies {
+  python 'pypi:Werkzeug:0.7',
+  python 'pypi:Jinja2:2.4',
+  python 'pypi:itsdangerous:0.21',
+  python 'pypi:click:2.0'
+}
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+/* Scala projects need to declare a scala-library dependency. This dependency
+ * will then be used on compile and runtime class paths. It will also be used
+ * to get hold of the Scala compiler and Scaladoc tool, respectively */
+    compile 'org.scala-lang:scala-library:2.11.7'
+		testCompile 'org.scalatest:scalatest_2.11:3.0.0'
+		testCompile 'junit:junit:4.11'
+}
+
+//task copyFiles(type: Copy) {
+//	from 'scala'
+//	into 'src/main/scala'
+//	include '**/*.scala'
+//}
