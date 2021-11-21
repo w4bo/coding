@@ -1,11 +1,12 @@
 import unittest
 import os
 from importlib import import_module
-import time
-from v1 import test_function
+import sys
+sys.path.insert(0, 'addTwoNumbers')
 from v1 import ListNode
+from v1 import test_function
 
-def list_2_listnode(l):
+def l2ln(l):
     head = ListNode(val=-1)
     res = head
     for i in range(len(l)):
@@ -14,12 +15,20 @@ def list_2_listnode(l):
         res = cur_node
     return head.next
 
-def unit_test(self, f):
-    self.assertEqual(f(list_2_listnode([2, 4, 3]), list_2_listnode([5, 6, 4])), list_2_listnode([7, 0, 8]))
-    self.assertEqual(f(list_2_listnode([2, 4, 3]), list_2_listnode([0])), list_2_listnode([2, 4, 3]))
-    self.assertEqual(f(list_2_listnode([2, 4, 3]), list_2_listnode([5, 6, 7])), list_2_listnode([7, 0, 1, 1]))
-    self.assertEqual(f(list_2_listnode([0]), list_2_listnode([0])), list_2_listnode([0]))
-    self.assertEqual(f(list_2_listnode([9,9,9,9,9,9,9]), list_2_listnode([9,9,9,9])), list_2_listnode([8,9,9,9,0,0,0,1]))
+def ln2l(ln):
+    l = []
+    while ln is not None:
+        l.append(ln.val)
+        ln = ln.next
+    return l
+
+def unit_test(self, test_function):
+    self.assertEqual(ln2l(test_function(l2ln([2, 4, 3]), l2ln([5, 6, 4]))), [7, 0, 8])
+    self.assertEqual(ln2l(test_function(l2ln([2, 4, 3]), l2ln([5, 6, 4]))), [7, 0, 8])
+    self.assertEqual(ln2l(test_function(l2ln([2, 4, 3]), l2ln([0]))), [2, 4, 3])
+    self.assertEqual(ln2l(test_function(l2ln([2, 4, 3]), l2ln([5, 6, 7]))), [7, 0, 1, 1])
+    self.assertEqual(ln2l(test_function(l2ln([0]), l2ln([0]))), [0])
+    self.assertEqual(ln2l(test_function(l2ln([9,9,9,9,9,9,9]), l2ln([9,9,9,9]))), [8,9,9,9,0,0,0,1])
 
 class MyTest(unittest.TestCase):
     def test(self):
