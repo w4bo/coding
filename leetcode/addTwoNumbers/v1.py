@@ -22,7 +22,7 @@ def test_function(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[Li
     f = True # indicate whether a non-null items exists
     head = ListNode(val=-1) # set the head of the list
     res = head # res is the "accumulator"
-    carriage = 0 # carraige (if any)
+    carriage = 0 # carriage (if any)
     while f: # while at least an item is non empty
         n1 = l1.val if l1 is not None else 0 # get the item from the first list
         n2 = l2.val if l2 is not None else 0 # get the item from the second list
