@@ -1,0 +1,17 @@
+name: "Leetcode"
+on:
+  push:
+      paths:
+        - leetcode/**
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+      - name: Run all
+        run: |
+          cd leetcode
+          pip3 install -r requirements.txt
+          python test_all.py
