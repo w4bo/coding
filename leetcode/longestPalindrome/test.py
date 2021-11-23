@@ -3,6 +3,7 @@ import unittest
 from importlib import import_module
 import sys
 sys.path.insert(0, 'longestPalindrome')
+from v1 import test_function
 
 
 def unit_test(self, test_function):
