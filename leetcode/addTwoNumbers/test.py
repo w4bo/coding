@@ -3,8 +3,8 @@ import os
 from importlib import import_module
 import sys
 sys.path.insert(0, 'addTwoNumbers')
-from v1 import ListNode
-from v1 import test_function
+from addTwoNumbers1 import ListNode
+from addTwoNumbers1 import test_function
 
 def l2ln(l):
     head = ListNode(val=-1)
