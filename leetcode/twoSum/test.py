@@ -2,7 +2,9 @@ import unittest
 import os
 from importlib import import_module
 import time
-from v1 import test_function
+import sys
+sys.path.insert(0, 'twoSum')
+from v2 import test_function
 
 def unit_test(self, twoSum):
     self.assertEqual(set(twoSum([2, 7, 11, 15], 9)), set([0, 1]))
