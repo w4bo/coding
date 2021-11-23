@@ -1,5 +1,6 @@
 problem,solution,time
-addTwoNumbers,v1.py,0.0
-isPalindrome,v1.py,0.0
-lengthOfLongestSubstring,v1.py,0.0
-twoSum,v1.py,0.0
+addTwoNumbers,v1.py,3.714561462402344e-05
+longestPalindrome,v1.py,0.0001016378402709961
+isPalindrome,v1.py,3.4809112548828124e-06
+lengthOfLongestSubstring,v1.py,2.8181076049804688e-05
+twoSum,v1.py,7.724761962890625e-06

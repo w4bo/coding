@@ -8,7 +8,8 @@ class Test(unittest.TestCase):
     def test(self):
         res = []
         for folder in [f.path for f in os.scandir(".") if f.is_dir() and "venv" not in f.path]: # iterate over all the sub-folders (i.e., coding problems)
-            folder = folder.replace("\\", "").replace(".", "")
+            folder = folder.replace("\\", "").replace("/", "").replace(".", "")
+            print(folder)
             module = import_module(folder + ".test") # import the unit_test function
             unit_test = module.unit_test
             for filename in os.listdir(folder): # iterate over all solutions of each coding problem
