@@ -1,4 +1,3 @@
-from v1 import test_function
 import unittest
 from importlib import import_module
 import sys
