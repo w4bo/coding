@@ -11,6 +11,7 @@ def f():
             prev = cur
     return c
 
+
 class Test(unittest.TestCase):
     def test(self):
         self.assertEqual(f(), 1752)
