@@ -1,8 +1,8 @@
-name: "Leetcode"
+name: "AOC"
 on:
   push:
       paths:
-        - leetcode/**
+        - adventofcode/**
 jobs:
   launch:
     runs-on: ubuntu-latest
