@@ -20,28 +20,18 @@ def f(filename):
             y_s = line[1]
             x_e = line[2]
             y_e = line[3]
-            if x_s == x_e and y_s != y_e or x_s != x_e and y_s == y_e:
-                x = min(x_s, x_e)
-                while x <= max(x_s, x_e):
-                    y = min(y_s, y_e)
-                    while y <= max(y_s, y_e):
-                        if (x, y) not in coverage:
-                            coverage[(x, y)] = 0
-                        coverage[(x, y)] += 1
-                        y += 1
-                    x += 1
-            elif max(x_s, x_e) - min(x_s, x_e) ==  max(y_s, y_e) - min(y_s, y_e):
-                x = x_s
-                y = y_s
-                while x != x_e and y != y_e:
-                    if (x, y) not in coverage:
-                        coverage[(x, y)] = 0
-                    coverage[(x, y)] += 1
-                    y = inc(y_s, y_e, y)
-                    x = inc(x_s, x_e, x)
+
+            x = x_s
+            y = y_s
+            while x != x_e or y != y_e:
                 if (x, y) not in coverage:
                     coverage[(x, y)] = 0
                 coverage[(x, y)] += 1
+                y = inc(y_s, y_e, y)
+                x = inc(x_s, x_e, x)
+            if (x, y) not in coverage:
+                coverage[(x, y)] = 0
+            coverage[(x, y)] += 1
     return len([key for key, value in coverage.items() if value > 1])
 
 
