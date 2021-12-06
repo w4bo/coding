@@ -11,7 +11,6 @@ def f(filename, days):
             smart_status[c] += 1
         curstatus = smart_status
         for d in range(days):
-            print("Day " + str(d))
             newstatus = {}
             for k, v in curstatus.items():
                 if k == 0:
@@ -34,7 +33,7 @@ class Test(unittest.TestCase):
         self.assertEqual(f('data/06-test.txt', 80), 5934)
         self.assertEqual(f('data/06-test.txt', 256), 26984457539)
         self.assertEqual(f('data/06-input.txt', 80), 362666)
-        self.assertEqual(f('data/06-input.txt', 256), 26984457539)
+        self.assertEqual(f('data/06-input.txt', 256), 1640526601595)
 
 if __name__ == "__main__":
     unittest.main()

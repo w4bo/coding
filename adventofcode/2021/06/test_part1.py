@@ -5,7 +5,6 @@ def f(filename, days):
     with open(filename) as f:
         curstatus = [int(x) for x in f.readlines()[0].split(",")]  # read the lines
         for d in range(days):
-            print("Day " + str(d))
             newfishes = []
             for i, c in enumerate(curstatus):
                 if c == 0:
