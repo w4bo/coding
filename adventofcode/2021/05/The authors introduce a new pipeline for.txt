@@ -1,0 +1,31 @@
+The authors introduce a new pipeline for extracting knowledge from agricultural text data and represent such knowledge within a knowledge graph. The topic is of interest, but due to following points, I believe the paper should undergo **major** revision.
+
+Motivation, related work, and application scope are severe issues about this paper.
+
+Motivation. The extraction of knowledge graph, entity resolution, and relationship resolution are well understood data mining/machine learning tasks. The pipeline introduced by the authors do not open new research ground, bur rather improve the state-of-the-art accuracy. In doing so, authors do not provide the motivation behind for their implementation choice. I wonder if accuracy could be even better given automated machine learning(1) approaches that "just" try pre-processing algorithms with the goal to achieve a better solution. Hence, is this a delta paper?
+
+(1) Giovanelli, J., Bilalli, B., & Abelló Gamazo, A. (2021). Effective data pre-processing for AutoML. In Proceedings of the 23rd International Workshop on Design, Optimization, Languages and Analytical Processing of Big Data (DOLAP): co-located with the 24th International Conference on Extending Database Technology and the 24th International Conference on Database Theory (EDBT/ICDT 2021): Nicosia, Cyprus, March 23, 2021 (pp. 1-10). CEUR-WS. org.
+
+Related work should be majorly extended.
+Entity and relationship resolutions have a huge amount of literature. The authors only devote a small section in discussing them and the novelty introduced by this work. Related work should be consistenly extended in two directions: (1) competing approaches for entity/relationship resoluntions for building knowledge graphs, and (2) how such knowledge should be managed. Indeed, once the knowledge base is populated, how are updates managed? What about inconsistencies in the data? What about the provenance necessary to trust the collection/processing process? Managing sources/quality/metadata, are well known problems that have been recently addressed by:
+(2) Buneman, P., & Tan, W. C. (2019). Data provenance: What next?. ACM SIGMOD Record, 47(3), 5-16.
+(3) Francia, M., Gallinucci, E., Golfarelli, M., Leoni, A. G., Rizzi, S., & Santolini, N. (2021). Making data platforms smarter with MOSES. Future Generation Computer Systems, 125, 299-313.
+(4) Purohit, H., Kanagasabai, R., & Deshpande, N. (2019, January). Towards next generation knowledge graphs for disaster management. In 2019 IEEE 13th international conference on semantic computing (ICSC) (pp. 474-477). IEEE.
+
+Application scope.
+Before introducing a specific train on dataset about agricolture, this model is general purpose and not oriented to agricolture. What is the novelty introduced in the agricolture sector with respect to this contribution? In principle, any method for knowledge graph construction could be applied here and used for comparison.
+
+Experimental evaluation.
+- Reproducibility. The dataset is not public, so experiments cannot be reproduced.
+- The approach is not compared against existing approaches for knowledge graph extraction. If this approach is completely new and cannot be compared against other (even though I doubt it) authors should clearly state it. Examples of competing approaches are (plus many others can be found):
+(5) Wang, C., Ma, X., Chen, J., & Chen, J. (2018). Information extraction and knowledge graph construction from geoscience literature. Computers & geosciences, 112, 112-120.
+(6) Xiaoxue, L., Xuesong, B., Longhe, W., Bingyuan, R., Shuhan, L., & Lin, L. (2019). Review and trend analysis of knowledge graphs for crop pest and diseases. IEEE Access, 7, 62251-62264.
+(7) Dou, J., Qin, J., Jin, Z., & Li, Z. (2018). Knowledge graph based on domain ontology and natural language processing technology for Chinese intangible cultural heritage. Journal of Visual Languages & Computing, 48, 19-28.
+
+Paper understandability should be improved.
+- Many formulas, equations (e.g., page 6), as well as parameter tuning are used without explanation and motivation. This makes reading the paper unnecessarily hard.
+- What is the purpose/take away of Table 3? Is it copied and pasted from [12]?
+
+Paper quality should be majorly improved.
+- Many acronyms are used without explanation
+- Many typos should be fixed. E.g., from the first few paragraphs of the introduction: tech-nology special-ized educa-tionagri-cultural Cen-ter
