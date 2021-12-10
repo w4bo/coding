@@ -38,7 +38,7 @@ class Test(unittest.TestCase):
         self.assertEqual(f('data/10-test.txt'), 288957)
         self.assertEqual(f('data/10-testb.txt'), 288957)
         self.assertEqual(f('data/10-testa.txt'), 294)
-        self.assertEqual(f('data/10-input.txt'), 311895)
+        self.assertEqual(f('data/10-input.txt'), 2904180541)
 
 if __name__ == "__main__":
     unittest.main()
