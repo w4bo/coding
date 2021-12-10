@@ -9,22 +9,22 @@ As your submarine slowly makes its way through the cave system, you notice that 
 Each digit of a seven-segment display is rendered by turning on or off any of seven segments named a through g:
 
     0:      1:      2:      3:      4:
-    aaaa    ....    aaaa    aaaa    ....
+     aaaa    ....    aaaa    aaaa    ....
     b    c  .    c  .    c  .    c  b    c
     b    c  .    c  .    c  .    c  b    c
-    ....    ....    dddd    dddd    dddd
+     ....    ....    dddd    dddd    dddd
     e    f  .    f  e    .  .    f  .    f
     e    f  .    f  e    .  .    f  .    f
-    gggg    ....    gggg    gggg    ....
+     gggg    ....    gggg    gggg    ....
 
     5:      6:      7:      8:      9:
-    aaaa    aaaa    aaaa    aaaa    aaaa
+     aaaa    aaaa    aaaa    aaaa    aaaa
     b    .  b    .  .    c  b    c  b    c
     b    .  b    .  .    c  b    c  b    c
-    dddd    dddd    ....    dddd    dddd
+     dddd    dddd    ....    dddd    dddd
     .    f  e    f  .    f  e    f  .    f
     .    f  e    f  .    f  e    f  .    f
-    gggg    gggg    ....    gggg    gggg
+     gggg    gggg    ....    gggg    gggg
 
 So, to render a 1, only segments c and f would be turned on; the rest would be off. To render a 7, only segments a, c, and f would be turned on.
 
