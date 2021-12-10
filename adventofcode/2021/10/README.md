@@ -15,7 +15,7 @@ The navigation subsystem syntax is made of several lines containing chunks. Ther
     If a chunk opens with {, it must close with }.
     If a chunk opens with <, it must close with >.
 
-So, () is a legal chunk that contains no other chunks, as is []. More complex but valid chunks include ([]), {()()()}, <([{}])>, [<>({}){}[([])<>]], and even (((((((((()))))))))).
+So, `()` is a legal chunk that contains no other chunks, as is `[]`. More complex but valid chunks include `([]), {()()()}, <([{}])>, [<>({}){}[([])<>]]`, and even `(((((((((())))))))))`.
 
 Some lines are incomplete, but others are corrupted. Find and discard the corrupted lines first.
 
