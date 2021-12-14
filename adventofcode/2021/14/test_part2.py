@@ -20,7 +20,6 @@ def f(filename, d):
         
         cur_patterns = get_patterns(template)
         for d in range(d):
-            print(d)
             new_patterns = {}
             for k, v in cur_patterns.items():
                 pair = k[0] + instructions[k]
