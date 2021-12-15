@@ -1,5 +1,5 @@
 import unittest
-import sys
+
 
 def print_board(dots):
     max_x = 0
@@ -8,7 +8,7 @@ def print_board(dots):
         x, y = k
         max_x = max(max_x, x)
         max_y = max(max_y, y)
-    
+
     s = ""
     for x in range(0, max_x + 1):
         for y in range(0, max_y + 1):
@@ -19,6 +19,7 @@ def print_board(dots):
     with open("out.txt", "w") as f:
         f.write(s)
 
+
 def f(filename):
     with open(filename) as f:
         lines = [x.strip() for x in f.readlines()]  # read the lines
@@ -26,7 +27,6 @@ def f(filename):
         dots = {}
         instructions = []
 
-        
         f = False
         for line in lines:
             f = f or len(line) == 0
@@ -48,7 +48,7 @@ def f(filename):
                 if f == "y" and x > idx or f == "x" and y > idx:
                     to_remove.append(coord)
                     new_dots[((idx + idx - x) if f == "y" else x, (idx + idx - y) if f == "x" else y)] = 1
-            
+
             dots = {**dots, **new_dots}
             for r in to_remove:
                 del dots[r]
@@ -61,6 +61,7 @@ class Test(unittest.TestCase):
     def test(self):
         self.assertEqual(f('data/13-test.txt'), 17)
         self.assertEqual(f('data/13-input.txt'), 710)
+
 
 if __name__ == "__main__":
     unittest.main()

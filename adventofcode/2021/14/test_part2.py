@@ -1,5 +1,5 @@
 import unittest
-import sys
+
 
 def get_patterns(template):
     patterns = {}
@@ -11,13 +11,14 @@ def get_patterns(template):
         i += 1
     return patterns
 
+
 def f(filename, d):
     with open(filename) as f:
         lines = [x.strip() for x in f.readlines()]  # read the lines
         template = lines[0]
         instructions = [x.split(" -> ") for x in lines[2:]]
         instructions = {x[0]: x[1] for x in instructions}
-        
+
         cur_patterns = get_patterns(template)
         for d in range(d):
             new_patterns = {}
@@ -35,9 +36,10 @@ def f(filename, d):
         acc = []
         for k, v in res.items():
             acc.append(v)
-        
+
         acc = sorted(acc)
         return acc[-1] - acc[0]
+
 
 class Test(unittest.TestCase):
     def test(self):
@@ -45,6 +47,7 @@ class Test(unittest.TestCase):
         self.assertEqual(f('data/14-input.txt', 10), 3230)
         self.assertEqual(f('data/14-test.txt', 40), 2188189693529)
         self.assertEqual(f('data/14-input.txt', 40), 3542388214529)
+
 
 if __name__ == "__main__":
     unittest.main()

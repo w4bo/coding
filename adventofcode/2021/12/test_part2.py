@@ -1,5 +1,5 @@
 import unittest
-import sys
+
 
 def f(filename):
     with open(filename) as f:
@@ -11,6 +11,7 @@ def f(filename):
             graph[line[1]] = graph.get(line[1], []) + [line[0]]
 
         accs = []
+
         def rec(cur_node, visited, acc):
             if cur_node == "end":
                 accs.append(acc)
@@ -23,7 +24,7 @@ def f(filename):
                         n_visited = visited.copy()
                         n_visited[neigh] = n_visited.get(neigh, 0) + 1
                         rec(neigh, n_visited, n_acc)
-        
+
         rec("start", {"start": 1}, ["start"])
         return len(accs)
 
@@ -32,6 +33,7 @@ class Test(unittest.TestCase):
     def test(self):
         self.assertEqual(f('data/12-test.txt'), 36)
         self.assertEqual(f('data/12-input.txt'), 96528)
+
 
 if __name__ == "__main__":
     unittest.main()
