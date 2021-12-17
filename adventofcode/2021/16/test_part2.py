@@ -62,11 +62,6 @@ def reduces(nums, typeId):
         return 1 if nums[0] == nums[1] else 0
 
 
-res = {"acc": 0}
-
-res["acc"] = 0
-
-
 def from_file(filename):
     with open(filename) as file:
         lines = [x.strip() for x in file.readlines()][0]  # read the lines
@@ -79,7 +74,6 @@ def f(lines):
     def parse(lines):
         V = bin_to_num(lines[0:3])
         T = bin_to_num(lines[3:6])
-        res["acc"] += V
         if T == 4:
             s = ""
             lines = lines[6:]
