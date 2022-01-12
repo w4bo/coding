@@ -19,7 +19,7 @@ dependencies {
  * to get hold of the Scala compiler and Scaladoc tool, respectively */
     compile 'org.scala-lang:scala-library:2.11.12'
 		testCompile 'org.scalatest:scalatest_2.11:3.0.9'
-		testCompile 'junit:junit:4.11'
+		testCompile 'junit:junit:4.13.2'
 }
 
 //task copyFiles(type: Copy) {
