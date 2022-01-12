@@ -18,7 +18,7 @@ dependencies {
  * will then be used on compile and runtime class paths. It will also be used
  * to get hold of the Scala compiler and Scaladoc tool, respectively */
     compile 'org.scala-lang:scala-library:2.13.8'
-		testCompile 'org.scalatest:scalatest_2.11:3.0.9'
+		testCompile 'org.scalatest:scalatest_2.11:3.3.0-SNAP3'
 		testCompile 'junit:junit:4.13.2'
 }
 
