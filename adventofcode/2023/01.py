@@ -9,7 +9,5 @@ with open("01.txt", 'r') as f:
                 if first == -1:
                     first = int(c)
                 last = int(c)
-            if c == '\n':
-                print(c)
-                sum += first * 10 + last
+        sum += first * 10 + last
     print(sum)
