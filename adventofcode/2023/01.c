@@ -47,7 +47,9 @@ int sum(char *s)
                 first_digit = *s - '0';
             }
             last_digit = *s - '0';
-        } else if (*s == '\n') {
+        }
+        else if (*s == '\n')
+        {
             printf("Sum %d, first_digit %d, last_digit %d\n", sum, first_digit, last_digit);
             sum += first_digit * 10 + last_digit;
             first_digit = -1;
